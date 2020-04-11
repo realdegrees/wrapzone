@@ -1,7 +1,7 @@
-export declare type StatData = {
-    [key in Stat]: number;
+export declare type GlobalStatProperties = {
+    [key in GlobalStat]: number;
 }
-declare type Stat =
+declare type GlobalStat =
     'recordLongestWinStreak' |
     'recordXpInAMatch' |
     'accuracy' |
