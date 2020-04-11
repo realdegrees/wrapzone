@@ -131,7 +131,7 @@ declare type EquipDataProperty =
     'tacticals' |
     'lethals';
 declare type ItemDataProperty = {
-    [key in Equip | Weapon]: { 
+    [key in Equip | Weapon]?: { 
         properties: EquipDataProperties | WeaponDataProperties
     };
 };
