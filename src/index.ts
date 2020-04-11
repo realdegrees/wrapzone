@@ -39,6 +39,12 @@ class Wrapzone {
         return this.playerData;
     }
 
+    public getModeStats(mode: Mode): ModeProperties | undefined {
+        return this.playerData.lifetime.mode[mode];
+    }
+    public getModeStat(stat: ModeStat, mode: Mode): number | undefined {
+        return this.getModeStats(mode)?.[stat];
+    }
 }
 const createWrapzone = async (platform: Platform, userName: string): Promise<Wrapzone> => {
     const playerData = await fetchPlayerData(platform, userName);
