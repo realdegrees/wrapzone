@@ -34,10 +34,10 @@ class Wrapzone {
     /**
      * Returns the raw json that was retrieved from the cod API
      */
-    public get raw() : PlayerData {
+    public get raw(): unknown {
         return this.playerData;
     }
-    
+
 }
 const createWrapzone = async (platform: Platform, userName: string): Promise<Wrapzone> => {
     const playerData = await fetchPlayerData(platform, userName);
