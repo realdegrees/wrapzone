@@ -1,0 +1,46 @@
+{
+  "name": "wrapzone",
+  "version": "1.0.0",
+  "description": "An typed wrapper for the Call of Duty: Modern Warfare API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "start": "npm run-script build && node dist/index.js",
+    "prepare": "npm run-script build",
+    "build": "tsc && npm run-script build-declarations",
+    "build-declarations": "run-script-os",
+    "build-declarations:windows": "xcopy ./src/@types ./dist/@types",
+    "build-declarations:nix": "cp -r ./src/@types ./dist/@types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realdegrees/wrapzone.git"
+  },
+  "keywords": [
+    "cod",
+    "call of duty",
+    "modern warfare",
+    "warzone",
+    "mw",
+    "node",
+    "typescript",
+    "wrapper",
+    "typed"
+  ],
+  "author": "Fabian Schebera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realdegrees/wrapzone/issues"
+  },
+  "homepage": "https://github.com/realdegrees/wrapzone#readme",
+  "dependencies": {
+    "@types/node-fetch": "^2.5.6",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "run-script-os": "^1.1.1"
+  }
+}
