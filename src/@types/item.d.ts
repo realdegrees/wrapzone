@@ -86,7 +86,7 @@ export declare const enum Lethal {
     THERMITE = 'equip_thermite',
     THROWING_KNIFE = 'equip_throwing_knife'
 }
-declare type Item =
+declare type Weapon =
     Sniper |
     Lmg |
     Launcher |
@@ -96,9 +96,12 @@ declare type Item =
     Shotgun |
     Smg |
     Marksman |
-    Meele |
+    Meele;
+
+declare type Equip =
     Tactical |
     Lethal;
+
 export declare type WeaponProperties = {
     [key in WeaponProperty]: number
 }
@@ -134,7 +137,7 @@ declare type EquipCategory =
     'tacticals' |
     'lethals';
 declare type ItemDataProperty = {
-    [key in Item]?: {
+    [key in Weapon | Equip]?: {
         properties: EquipProperties | WeaponProperties
     };
 };
