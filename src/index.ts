@@ -1,6 +1,8 @@
 import { Platform, PlayerData } from "./@types/player";
 import fetch from "node-fetch";
-import { Lethal } from "item";
+import { Mode, ModeStat, ModeProperties } from "mode";
+import { GlobalStat, GlobalStatProperties } from "stat";
+import { Item, WeaponProperties, EquipProperties, Weapon, Equip, EquipProperty, WeaponProperty } from "item";
 
 const API_ROUTE = 'https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/%PLATFORM%/gamer/%USER%/profile/type/br'
 
@@ -51,11 +53,23 @@ class Wrapzone {
     public getModeStat(stat: ModeStat, mode: Mode): number | undefined {
         return this.getModeStats(mode)?.[stat];
     }
+    public getWeaponStats(weapon: Weapon): WeaponProperties | undefined {
+        Object.values(this.playerData.lifetime.itemData).forEach((itemCategory) => {
+            return itemCategory?.[weapon];
+        });
+        throw new Error('No stats for this weapon');
+    }
     public getEquipStats(equip: Equip): EquipProperties | undefined {
         Object.values(this.playerData.lifetime.itemData).forEach((itemCategory) => {
             return itemCategory?.[equip];
         });
         throw new Error('No stats for this weapon');
+    }
+    public getWeaponStat(stat: WeaponProperty, weapon: Weapon): number | undefined {
+        return this.getWeaponStats(weapon)?.[stat];
+    }
+    public getEquipStat(stat: EquipProperty, equip: Equip): number | undefined {
+        return this.getEquipStats(equip)?.[stat];
     }
 }
 const createWrapzone = async (platform: Platform, userName: string): Promise<Wrapzone> => {
