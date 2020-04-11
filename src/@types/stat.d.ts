@@ -1,7 +1,8 @@
 export declare type StatData = {
-    [key in StatProperty]: number;
+    [key in Stat]: number;
 }
-declare type StatProperty = 'recordLongestWinStreak' |
+declare type Stat =
+    'recordLongestWinStreak' |
     'recordXpInAMatch' |
     'accuracy' |
     'bestTotalXp' |

@@ -1,17 +1,19 @@
 export type ModeData = {
-    [key in ModeDataProperty]: Mode;
+    [key in Mode]: ModeProperties;
 };
 
-declare interface Mode {
-    kills: number;
-    score: number;
-    timePlayed: number;
-    kdRatio: number;
-    assists: number;
-    scorePerMinute: number;
-    deaths: number;
+declare type ModeProperties = {
+    [key in ModeStat]: number;
 }
-declare type ModeDataProperty =
+declare type ModeStat =
+    'kills' |
+    'score' |
+    'timePlayed' |
+    'kdRatio' |
+    'assists' |
+    'scorePerMinute' |
+    'deaths';
+declare type Mode =
     'dom' |
     'war' |
     'hq' |
