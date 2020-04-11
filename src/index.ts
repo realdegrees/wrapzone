@@ -1,5 +1,6 @@
 import { Platform, PlayerData } from "./@types/player";
 import fetch from "node-fetch";
+import { Lethal } from "item";
 
 const API_ROUTE = 'https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/%PLATFORM%/gamer/%USER%/profile/type/br'
 
