@@ -1,4 +1,4 @@
-import { StatData } from "./stat";
+import { GlobalStatProperties } from "./stat";
 import { AccoladeData } from "./accolade";
 import { ItemData } from "./item";
 import { StreakData } from "./streak";
@@ -18,7 +18,7 @@ export interface PlayerData {
     weekly: WeeklyData;
 }
 export interface WeeklyData {
-    all: StatData;
+    all: GlobalStatProperties;
     mode: ModeData;
 }
 export interface LifetimeData {
@@ -28,7 +28,7 @@ export interface LifetimeData {
         properties: AccoladeData
     };
     all: {
-        properties: StatData
+        properties: GlobalStatProperties
     };
     mode: ModeData;
 }
