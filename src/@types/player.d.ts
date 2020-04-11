@@ -24,7 +24,11 @@ export interface WeeklyData {
 export interface LifetimeData {
     itemData: ItemData;
     scorestreakData: StreakData;
-    accoladeData: AccoladeData;
-    all: StatData;
+    accoladeData: {
+        properties: AccoladeData
+    };
+    all: {
+        properties: StatData
+    };
     mode: ModeData;
 }
