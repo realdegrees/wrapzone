@@ -87,18 +87,18 @@ export declare const enum Lethal {
     THROWING_KNIFE = 'equip_throwing_knife'
 }
 declare type Weapon =
-    Sniper |
-    Lmg |
-    Launcher |
-    Pistol |
-    AussaultRifle |
-    Other |
-    Shotgun |
-    Smg |
-    Marksman |
+    Sniper &
+    Lmg &
+    Launcher &
+    Pistol &
+    AussaultRifle &
+    Other &
+    Shotgun &
+    Smg &
+    Marksman &
     Meele;
 declare type Equip =
-    Tactical |
+    Tactical &
     Lethal;
 export declare interface WeaponDataProperties {
     accuracy: number;
