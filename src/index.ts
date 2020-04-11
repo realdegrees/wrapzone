@@ -42,6 +42,12 @@ class Wrapzone {
     public getModeStats(mode: Mode): ModeProperties | undefined {
         return this.playerData.lifetime.mode[mode];
     }
+    public getGlobalStats(): GlobalStatProperties {
+        return this.playerData.lifetime.all.properties;
+    }
+    public getGlobalStat(stat: GlobalStat): number |undefined {
+        return this.getGlobalStats()[stat];
+    }
     public getModeStat(stat: ModeStat, mode: Mode): number | undefined {
         return this.getModeStats(mode)?.[stat];
     }
