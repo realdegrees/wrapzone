@@ -2,13 +2,13 @@ export declare interface StreakData {
     supportScorestreakData: SupportStreakData;
     lethalScorestreakData: LethalStreakData;
 }
-declare type LethalStreakData {
-    [key: Lethal]: {
+declare type LethalStreakData = {
+    [key in Lethal]: {
         properties: StreakProperties
     };
 }
-declare type SupportStreakData {
-    [key: Support]: {
+declare type SupportStreakData = {
+    [key in Support]: {
         properties: StreakProperties
     };
 }
