@@ -51,6 +51,12 @@ class Wrapzone {
     public getModeStat(stat: ModeStat, mode: Mode): number | undefined {
         return this.getModeStats(mode)?.[stat];
     }
+    public getEquipStats(equip: Equip): EquipProperties | undefined {
+        Object.values(this.playerData.lifetime.itemData).forEach((itemCategory) => {
+            return itemCategory?.[equip];
+        });
+        throw new Error('No stats for this weapon');
+    }
 }
 const createWrapzone = async (platform: Platform, userName: string): Promise<Wrapzone> => {
     const playerData = await fetchPlayerData(platform, userName);
