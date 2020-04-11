@@ -34,7 +34,7 @@ class Wrapzone {
     /**
      * Returns the raw json that was retrieved from the cod API
      */
-    public get raw(): unknown {
+    public get raw(): PlayerData {
         return this.playerData;
     }
 
