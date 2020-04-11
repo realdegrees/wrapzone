@@ -1,5 +1,5 @@
 export type ItemData = {
-    [key in Equip | Weapon]: ItemDataProperty;
+    [key in EquipCategory | WeaponCategory]: ItemDataProperty;
 };
 export declare const enum Sniper {
     HDR = 'iw8_sn_hdromeo',
@@ -119,7 +119,7 @@ declare type WeaponProperty =
     'kdRatio' |
     'kills' |
     'shots';
-declare type Weapon =
+declare type WeaponCategory =
     'weapon_sniper' |
     'weapon_lmg' |
     'weapon_launcher' |
@@ -130,7 +130,7 @@ declare type Weapon =
     'weapon_smg' |
     'weapon_marksman' |
     'weapon_melee';
-declare type Equip =
+declare type EquipCategory =
     'tacticals' |
     'lethals';
 declare type ItemDataProperty = {
