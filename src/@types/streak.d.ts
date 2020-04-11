@@ -3,10 +3,14 @@ export declare interface StreakData {
     lethalScorestreakData: LethalStreakData;
 }
 declare type LethalStreakData {
-    [key: Lethal]: StreakProperties;
+    [key: Lethal]: {
+        properties: StreakProperties
+    };
 }
 declare type SupportStreakData {
-    [key: Support]: StreakProperties;
+    [key: Support]: {
+        properties: StreakProperties
+    };
 }
 declare interface StreakProperties {
     awardedCount: number;
