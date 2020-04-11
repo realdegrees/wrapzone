@@ -1,5 +1,5 @@
 export type ItemData = {
-    [key in ItemDataProperty]: Item;
+    [key in EquipDataProperty | WeaponDataProperty]: EquipData | WeaponData;
 };
 export declare const enum Sniper {
     HDR = 'iw8_sn_hdromeo',
@@ -86,11 +86,9 @@ export declare const enum Lethal {
     THERMITE = 'equip_thermite',
     THROWING_KNIFE = 'equip_throwing_knife'
 }
-declare type Item =
+declare type Weapon =
     Sniper |
     Lmg |
-    Tactical |
-    Lethal |
     Launcher |
     Pistol |
     AussaultRifle |
@@ -99,7 +97,10 @@ declare type Item =
     Smg |
     Marksman |
     Meele;
-export declare interface WeaponData {
+declare type Equip =
+    Tactical |
+    Lethal;
+export declare interface WeaponDataProperties {
     accuracy: number;
     deaths: number;
     headshots: number;
@@ -108,17 +109,15 @@ export declare interface WeaponData {
     kills: number;
     shots: number;
 }
-export declare interface EquipData {
+export declare interface EquipDataProperties {
     hits: number;
     kills: number;
     shots: number;
     deaths: number;
     headShots: number;
 }
-declare type ItemDataProperty =
+declare type WeaponDataProperty =
     'weapon_sniper' |
-    'tacticals' |
-    'lethals' |
     'weapon_lmg' |
     'weapon_launcher' |
     'weapon_pistol' |
@@ -128,3 +127,16 @@ declare type ItemDataProperty =
     'weapon_smg' |
     'weapon_marksman' |
     'weapon_melee';
+declare type EquipDataProperty =
+    'tacticals' |
+    'lethals';
+declare type EquipData = {
+    [key in Equip]: { 
+        properties: EquipDataProperties 
+    };
+};
+declare type WeaponData = {
+    [key in Weapon]: {
+        properties: WeaponDataProperties
+    };
+}
