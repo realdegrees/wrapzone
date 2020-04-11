@@ -12,7 +12,7 @@ const fetchPlayerData = (platform: Platform, userName: string): Promise<PlayerDa
 
     return fetch(target)
         .then((res) => res.json())
-        .then((data) => data);
+        .then((json) => json.data);
 }
 
 class Wrapzone {
