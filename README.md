@@ -1,14 +1,14 @@
-# Wrapzone
+# Welcome to Wrapzone 👋
+[![NPM][npm-image]][npm-url]
+[![Typedoc][typedoc-img]][typedoc-url]
+[![NPM][license-img]][license-url]
 
 > Wrapzone is a Wrapper for the Call of Duty® Modern Warfare (2019) API.  
-> It simplifies parsing the huge JSON-File returned from the API endpoint.  
-> Types are included in the package. There is also a [Typedoc](https://realdegrees.github.io/wrapzone/) available.
-
-[![NPM Version][npm-image]][npm-url]
+> It aims to simplify parsing the huge JSON-File returned from the API endpoint.  
 
 ## Install
 
-```bash
+```sh
 npm install wrapzone
 ```
 
@@ -48,8 +48,9 @@ const raw = player.raw
 Until this package covers all properties, the raw untyped json data can be retrieved to use how you want to.  
 The Wrapzone object can still be used to wrap the call to the API.
 
-## License
-
-[MIT](LICENSE)
 [npm-image]: https://img.shields.io/npm/v/wrapzone?style=flat-square
 [npm-url]: https://npmjs.org/package/wrapzone
+[typedoc-img]: https://img.shields.io/badge/documentation-yes-blue.svg?style=flat-square
+[typedoc-url]: https://realdegrees.github.io/wrapzone/
+[license-img]: https://img.shields.io/npm/l/wrapzone?color=blue&style=flat-square
+[license-url]: https://github.com/realdegrees/wrapzone/blob/master/LICENSE
