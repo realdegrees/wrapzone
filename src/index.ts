@@ -33,7 +33,7 @@ class Wrapzone {
      * Re-runs the initial request in order to get updated data
      */
     public async updatePlayerData() {
-        this.setPlayerData(this.platform, this.userName);
+        await this.setPlayerData(this.platform, this.userName);
     }
     /**
      * Returns the raw json that was retrieved from the cod API
