@@ -51,6 +51,5 @@ The Wrapzone object can still be used to wrap the call to the API.
 ## License
 
 [MIT](LICENSE)
-
-[npm-image]: https://img.shields.io/npm/v/live-wrapzone.svg
+[npm-image]: https://img.shields.io/npm/v/wrapzone?style=flat-square
 [npm-url]: https://npmjs.org/package/wrapzone
