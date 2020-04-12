@@ -1,9 +1,9 @@
-import { Platform, PlayerData } from "./@types/player";
 import fetch from "node-fetch";
-import { Mode, ModeProperties, HardpointProperties } from "mode";
-import { GlobalStatProperties } from "stat";
-import { Weapon, WeaponProperties, Equip, EquipProperties, Item } from "item";
-import { Streak, StreakProperties } from "streak";
+import { Platform, PlayerData } from "./@types/player";
+import { Mode, ModeProperties } from "./@types/mode";
+import { GlobalStatProperties } from "./@types/stat";
+import { Weapon, WeaponProperties, Equip, EquipProperties, Item } from "./@types/item";
+import { Streak, StreakProperties } from "./@types/streak";
 
 const API_ROUTE = 'https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/%PLATFORM%/gamer/%USER%/profile/type/br'
 
