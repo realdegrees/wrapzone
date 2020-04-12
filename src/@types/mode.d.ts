@@ -12,31 +12,29 @@ export namespace Mode {
         PLUNDER = 'br_dmz',
         ALL = 'br_all'
     }
-    export namespace Multiplayer {
-        export const enum Hardcore {
-            TEAM_DEATHMATCH = 'hc_war',
-            HARDPOINT = 'hc_koth',
-            HEADQUARTERS = 'hc_hq',
-            SEARCH_AND_DESTROY = 'hc_sd',
-            CYBER_ATTACK = 'hc_cyber',
-            KILL_CONFIRMED = 'hc_conf',
-            DOMINATION = 'hc_dom'
-        }
-        export const enum Core {
-            TEAM_DEATHMATCH = 'war',
-            HARDPOINT = 'koth',
-            HEADQUARTERS = 'hq',
-            SEARCH_AND_DESTROY = 'sd',
-            CYBER_ATTACK = 'cyber',
-            KILL_CONFIRMED = 'conf',
-            DOMINATION = 'dom'
-        }
+    export const enum Hardcore {
+        TEAM_DEATHMATCH = 'hc_war',
+        HARDPOINT = 'hc_koth',
+        HEADQUARTERS = 'hc_hq',
+        SEARCH_AND_DESTROY = 'hc_sd',
+        CYBER_ATTACK = 'hc_cyber',
+        KILL_CONFIRMED = 'hc_conf',
+        DOMINATION = 'hc_dom'
+    }
+    export const enum Core {
+        TEAM_DEATHMATCH = 'war',
+        HARDPOINT = 'koth',
+        HEADQUARTERS = 'hq',
+        SEARCH_AND_DESTROY = 'sd',
+        CYBER_ATTACK = 'cyber',
+        KILL_CONFIRMED = 'conf',
+        DOMINATION = 'dom'
     }
 }
 export declare type Mode =
     Mode.Warzone |
-    Mode.Multiplayer.Core |
-    Mode.Multiplayer.Hardcore;
+    Mode.Core |
+    Mode.Hardcore;
 
 export declare type BaseProperties = {
     [key in BaseProperty]: number;

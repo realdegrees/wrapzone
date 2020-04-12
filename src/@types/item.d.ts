@@ -124,7 +124,7 @@ export declare type Weapon =
 export declare type Equip =
     Item.Equip.Tactical |
     Item.Equip.Lethal;
-export declare type Item = Equip | Weapon;
+declare type Item = Equip | Weapon;
 
 export declare type WeaponProperties = {
     [key in WeaponProperty]: number;
