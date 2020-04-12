@@ -1,8 +1,9 @@
 import { Platform, PlayerData } from "./@types/player";
 import fetch from "node-fetch";
-import { Mode, ModeStat, ModeProperties } from "mode";
-import { GlobalStat, GlobalStatProperties } from "stat";
-import { WeaponProperties, EquipProperties, Weapon, Equip, EquipProperty, WeaponProperty } from "item";
+import { Mode, ModeProperties, HardpointProperties } from "mode";
+import { GlobalStatProperties } from "stat";
+import { Weapon, WeaponProperties, Equip, EquipProperties, Item } from "item";
+import { Streak, StreakProperties } from "streak";
 
 const API_ROUTE = 'https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/%PLATFORM%/gamer/%USER%/profile/type/br'
 
@@ -37,7 +38,7 @@ class Wrapzone {
     /**
      * Returns the raw json that was retrieved from the cod API
      */
-    public get raw(): PlayerData {
+    public get raw(): object {
         return this.playerData;
     }
 
@@ -47,29 +48,27 @@ class Wrapzone {
     public getGlobalStats(): GlobalStatProperties {
         return this.playerData.lifetime.all.properties;
     }
-    public getGlobalStat(stat: GlobalStat): number |undefined {
-        return this.getGlobalStats()[stat];
-    }
-    public getModeStat(stat: ModeStat, mode: Mode): number | undefined {
-        return this.getModeStats(mode)?.[stat];
+    public getEquipStats(equip: Equip): EquipProperties | undefined {
+        return this.getItemStats(equip) as EquipProperties | undefined;
     }
     public getWeaponStats(weapon: Weapon): WeaponProperties | undefined {
-        Object.values(this.playerData.lifetime.itemData).forEach((itemCategory) => {
-            return itemCategory?.[weapon];
-        });
-        throw new Error('No stats for this weapon');
+        return this.getItemStats(weapon) as WeaponProperties | undefined;
     }
-    public getEquipStats(equip: Equip): EquipProperties | undefined {
-        Object.values(this.playerData.lifetime.itemData).forEach((itemCategory) => {
-            return itemCategory?.[equip];
-        });
-        throw new Error('No stats for this weapon');
+    public getItemStats(item: Item): EquipProperties | WeaponProperties | undefined {
+        for (const itemCategory of Object.values(this.playerData.lifetime.itemData)) {
+            const properties = (itemCategory as any)?.[item]?.properties;
+            if (properties) {
+                return properties;
+            }
+        }
     }
-    public getWeaponStat(stat: WeaponProperty, weapon: Weapon): number | undefined {
-        return this.getWeaponStats(weapon)?.[stat];
+    public getStreakStats(streak: Streak): StreakProperties | undefined {
+        for (const streakCategory of Object.values(this.playerData.lifetime.scorestreakData)) {
+            const properties = (streakCategory as any)?.[streak]?.properties;
+            if (properties) {
+                return properties;
     }
-    public getEquipStat(stat: EquipProperty, equip: Equip): number | undefined {
-        return this.getEquipStats(equip)?.[stat];
+    }
     }
 }
 const createWrapzone = async (platform: Platform, userName: string): Promise<Wrapzone> => {
