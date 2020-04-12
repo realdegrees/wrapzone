@@ -1,0 +1,10 @@
+{
+    "name": "Wrapzone",
+    "excludeExternals": true,
+    "externalPattern": [
+        "**/node_modules/**"
+    ],
+    "includeDeclarations": true,
+    "mode": "file",
+    "readme": "none"
+}
