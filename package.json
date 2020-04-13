@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run-script build && node dist/index.js",
     "prepare": "npm run-script build",
-    "build": "tsc && npm run-script build-declarations && typedoc",
+    "build": "tsc && npm run-script build-declarations",
     "build-declarations": "run-script-os",
     "build-declarations:windows": "xcopy ./src/@types ./dist/@types",
     "build-declarations:nix": "cp -r ./src/@types ./dist/@types"
