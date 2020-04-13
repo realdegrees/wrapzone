@@ -1,7 +1,7 @@
 {
   "name": "wrapzone",
   "version": "1.0.0",
-  "description": "An typed wrapper for the Call of Duty: Modern Warfare API",
+  "description": "A typed wrapper for the Call of Duty: Modern Warfare API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
