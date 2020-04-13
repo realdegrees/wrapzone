@@ -37,12 +37,12 @@
   },
   "homepage": "https://github.com/realdegrees/wrapzone#readme",
   "dependencies": {
-    "@types/node-fetch": "^2.5.6",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "run-script-os": "^1.1.1",
     "typescript": "^3.8.3",
-    "typedoc": "^0.17.4"
+    "typedoc": "^0.17.4",
+    "@types/node-fetch": "^2.5.6"
   }
 }
