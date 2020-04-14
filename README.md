@@ -18,9 +18,10 @@ npm install wrapzone
 
 ```javascript
 const Wrapzone = require("wrapzone");
-const platform = "battle" // psn | xbl | battle
-const userName = "degrees#21681" // Username (include id for battle.net)
-const player = Wrapzone(platform, userName);
+const platform = "<platform>" // psn | xbl | battle
+const userName = "<userName>" // Username (include id for battle.net like name#12345)
+await Wrapzone.authenticate('<ActivisionEmail>', '<ActivisionPassword>')
+const player = await Wrapzone.get(platform, userName);
 ```
 
 ### Updating a Wrapzone instance
