@@ -17,7 +17,7 @@ npm install wrapzone
 ### Initialize a Wrapzone instance
 
 ```javascript
-const Wrapzone = require("wrapzone");
+const Wrapzone = require("wrapzone").default;
 const platform = "<platform>" // psn | xbl | battle
 const userName = "<userName>" // Username (include id for battle.net like name#12345)
 await Wrapzone.authenticate('<ActivisionEmail>', '<ActivisionPassword>')
