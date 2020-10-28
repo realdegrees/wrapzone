@@ -6,7 +6,7 @@
 > Wrapzone is a Wrapper for the Call of Duty® Modern Warfare (2019) API.  
 > It aims to simplify parsing the huge JSON-File returned from the API endpoint.  
 
-## Install
+## Installation
 
 ```sh
 npm install wrapzone
@@ -41,13 +41,31 @@ player.setPlayerData(platform, userName) // Uses the provided platform and userN
 All other methods on a Wrapzone object can be used to query the retrieved data. They are all **synchronous**.  
 [A full documentation of all methods and types can be found here.](https://realdegrees.github.io/wrapzone/) 
 
-## Getting the raw json
+### Getting the raw json
 
 ```javascript
 const raw = player.raw
 ```
 Until this package covers all properties, the raw untyped json data can be retrieved to use how you want to.  
 The Wrapzone object can still be used to wrap the call to the API.
+
+## Development
+If you want to contribute to this project or create your own fork check out the instructions here.
+
+### Prerequisites
+- Node v12+
+
+### Setup
+1. Clone the project
+2. Run `npm install`
+
+You can now run `npm start` to run the application.
+
+### Contributing
+If you want to contribute to this project:
+1. Create a fork
+2. Create a new branch
+3. Create a pull request on this repository
 
 [npm-image]: https://img.shields.io/npm/v/wrapzone?style=flat-square
 [npm-url]: https://npmjs.org/package/wrapzone
